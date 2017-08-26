@@ -18,5 +18,9 @@
   "homepage": "https://github.com/SebastianFlo/learn-lit-html#readme",
   "dependencies": {
     "lit-html": "^0.5.0"
+  },
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "ts-node": "^3.3.0"
   }
 }
