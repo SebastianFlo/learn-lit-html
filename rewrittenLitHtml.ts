@@ -427,6 +427,15 @@ export class NodePart implements SinglePart {
         itemPart.setValue(item);
         partIndex++;
       }
+
+      if (partIndex === 0) {
+        this.clear();
+        this._previousValue = undefined;
+      } else if (partIndex < itemParts.length) {
+        const lastPart = itemParts[partIndex - 1];
+        this.clear(lastPart.endNode.previousSibling!);
+        lastPart.endNode = this.endNode;
+      }
     }
 
   private _setText(value: string): void {
@@ -463,8 +472,6 @@ export class NodePart implements SinglePart {
     }
   }
 }
-
-
 
 export interface SinglePart extends Part {
   setValue(value: any): void;
