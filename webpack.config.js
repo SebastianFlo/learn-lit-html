@@ -14,6 +14,18 @@ module.exports = {
           loader: 'babel-loader'
         }
       }
+      // {
+      //   include: __dirname + '/index.ts',
+      //   exclude: /(node_modules|bower_components)/,
+      //   use: {
+      //     loader: 'ts-loader'
+      //   }
+      // }
     ]
+  },
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
   }
 }
