@@ -1,7 +1,11 @@
 // require('lit-html');
-import { html } from 'lit-html';
-window.onload = function(e) { 
+import { html, render } from 'lit-html';
+
+window.onload = function() { 
+    const title = 'Lit-HTML';
     const foo = 'the shit';
-    const render = () => html`<h1>foo is ${foo}</h1>`;
-    document.body.appendChild(render().template.element.content.cloneNode(true));
+    const header = html`<h1>${title}</h1>`;
+    const helloTemplate = (name) => html`${header}<h1>foo is ${foo}</h1>`;
+    render(helloTemplate('Steve'), document.body);
 }
+
