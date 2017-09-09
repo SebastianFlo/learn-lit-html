@@ -7,5 +7,9 @@ window.onload = function() {
     const header = html`<h1>${title}</h1>`;
     const helloTemplate = (name) => html`${header}<h1>foo is ${foo}</h1>`;
     render(helloTemplate('Steve'), document.body);
+
+    const items = [1, 2, 3, 4]
 }
+
+// TODO: Clock Demo
 
