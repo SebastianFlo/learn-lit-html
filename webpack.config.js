@@ -1,31 +1,19 @@
 module.exports = {
-  entry: './index.js',
-  output: {
-    path: __dirname + '/dist',
-    filename: 'bundle.js',
-    publicPath: '/dist'
-  },
-  module: {
-    rules: [
-      {
-        include: __dirname + '/index.js',
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader'
+    entry: __dirname + '/demo/clock.js',
+    output: {
+      path: __dirname + '/demo',
+      filename: 'clock.js',
+      publicPath: '/demo'
+    },
+    module: {
+      rules: [
+        {
+          include: __dirname + '/clock.js',
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader'
+          }
         }
-      }
-      // {
-      //   include: __dirname + '/index.ts',
-      //   exclude: /(node_modules|bower_components)/,
-      //   use: {
-      //     loader: 'ts-loader'
-      //   }
-      // }
-    ]
-  },
-  resolve: {
-    alias: {
-      vue: 'vue/dist/vue.js'
+      ]
     }
   }
-}
